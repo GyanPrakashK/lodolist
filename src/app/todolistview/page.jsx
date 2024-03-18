@@ -133,7 +133,7 @@ export default function Todos() {
             />
             <div className=" py-2 flex items-end justify-end ">
 
-              <button onClick={() => editTask(editTaskName)} className="sm:text-gray-900 sm:hover:text-white border border-gray-800 sm:bg-white sm:hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 sm:font-medium rounded-lg sm:text-sm px-5 py-2.5 sm:text-center me-2 mb-2 bg-zinc-700 text-white">
+              <button onClick={() => {editTask(editTaskName),setModal(!modal)}} className="sm:text-gray-900 sm:hover:text-white border border-gray-800 sm:bg-white sm:hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 sm:font-medium rounded-lg sm:text-sm px-5 py-2.5 sm:text-center me-2 mb-2 bg-zinc-700 text-white">
                 Save
               </button>
               <button className="sm:text-gray-900 sm:hover:text-white border border-gray-800 sm:bg-white sm:hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 sm:font-medium rounded-lg sm:text-sm px-5 py-2.5 sm:text-center me-2 mb-2 bg-zinc-700 text-white" onClick={closeEditModal}>
