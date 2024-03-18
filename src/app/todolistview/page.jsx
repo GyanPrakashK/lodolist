@@ -32,10 +32,8 @@ export default function Todos() {
 
   const openEditModal = (id) => {
     setModal(true)
-    let taskDetails = tasks.find((task)=> task.id === id )
+    let taskDetails = tasks.find((task) => task.id === id)
     setEditTaskName(taskDetails.name)
-    console.log(id)
-    console.log("task details",taskDetails.name)
     setEditTaskId(id);
   };
 
@@ -98,19 +96,16 @@ export default function Todos() {
           {tasks.map((task) => (
             <li
               key={task.id}
-              className={`sm:flex sm:flex-row sm:items-center sm:justify-between sm:p-2 flex flex-col items-center justify-center ${task.done ? 'line-through text-gray-500' : ''
-                }`}
+              className={`sm:flex sm:flex-row sm:items-center sm:justify-between sm:p-2 flex flex-col items-center justify-center `}
             >
               <div className="flex m-2 ">
-                <input id="link-checkbox" type="checkbox" className={`  mt-2.5 mr-2 size-5 text-blue-600 bg-gray-100 border-gray-900 rounded-md ${task.done ? 'line-through text-gray-500' : ''
-                  }`} onClick={() => toggleDone(task.id)}></input>
-                <div className="border border-zinc-700 p-2 rounded-xl w-72 text-lg font-semibold text-wrap">{task.name}</div>
+                <input id="link-checkbox" type="checkbox" className={`  mt-2.5 mr-2 size-5 text-blue-600 bg-gray-100 border-gray-900 rounded-md`} onClick={() => toggleDone(task.id)}></input>
+                <div className={` ${task.done ? 'line-through text-gray-500' : ''} border border-zinc-700 p-2 rounded-xl w-72 text-lg font-semibold text-wrap`}>{task.name}</div>
               </div>
 
               {/* {task.done ? 'Undo' : 'Done'} */}
               <div className="flex ml-7">
-                <button className="sm:text-gray-900 sm:hover:text-white border border-gray-800 sm:bg-white sm:hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 sm:font-medium rounded-lg sm:text-sm px-5 py-2.5 sm:text-center me-2 mb-2 bg-zinc-700 text-white" onClick={() => {
-
+                <button className="sm:text-gray-900 sm:hover:text-white border border-gray-800 sm:bg-white sm:hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 sm:font-medium rounded-lg sm:text-sm px-5 py-2.5 sm:text-center me-2 mb-2 bg-zinc-700 text-white " onClick={() => {
                   openEditModal(task.id)
                 }}>
                   Edit
@@ -133,7 +128,7 @@ export default function Todos() {
             />
             <div className=" py-2 flex items-end justify-end ">
 
-              <button onClick={() => {editTask(editTaskName),setModal(!modal)}} className="sm:text-gray-900 sm:hover:text-white border border-gray-800 sm:bg-white sm:hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 sm:font-medium rounded-lg sm:text-sm px-5 py-2.5 sm:text-center me-2 mb-2 bg-zinc-700 text-white">
+              <button onClick={() => { editTask(editTaskName), setModal(!modal) }} className="sm:text-gray-900 sm:hover:text-white border border-gray-800 sm:bg-white sm:hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 sm:font-medium rounded-lg sm:text-sm px-5 py-2.5 sm:text-center me-2 mb-2 bg-zinc-700 text-white">
                 Save
               </button>
               <button className="sm:text-gray-900 sm:hover:text-white border border-gray-800 sm:bg-white sm:hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 sm:font-medium rounded-lg sm:text-sm px-5 py-2.5 sm:text-center me-2 mb-2 bg-zinc-700 text-white" onClick={closeEditModal}>
