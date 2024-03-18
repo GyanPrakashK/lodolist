@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function Todos() {
   const [tasks, setTasks] = useState([]);
   const [taskName, setTaskName] = useState('');
-  const [editModalOpen, setEditModalOpen] = useState(false);
+  // const [editModalOpen, setEditModalOpen] = useState(false);
   const [editTaskId, setEditTaskId] = useState(null);
 
   const [editTaskName, setEditTaskName] = useState('')
