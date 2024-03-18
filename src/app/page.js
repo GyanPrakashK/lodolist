@@ -18,7 +18,7 @@ const page = () => {
           A to-do list is a tool for organizing tasks, ensuring completion, and managing time effectively.
         </p>
       </div>
-      <Link href='/todolistview' target='_blank' className='mt-6 sm:mt-12  border border-gray-800 rounded-xl'>
+      <Link href='/todolistview'  className='mt-6 sm:mt-12  border border-gray-800 rounded-xl'>
         <button className='p-4'>get start </button>
       </Link>
       <div className='mt-6' >
