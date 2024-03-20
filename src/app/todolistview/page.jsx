@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 // import EditTaskModal from "../components/EditTaskModal";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 export default function Todos() {
@@ -27,6 +28,7 @@ export default function Todos() {
       setTasks(newTasks);
       saveTasksToLocalStorage(newTasks);
       setTaskName('');
+      toast.success('Task Added Successfully!')
     }
   };
 
@@ -48,12 +50,14 @@ export default function Todos() {
     );
     setTasks(updatedTasks);
     saveTasksToLocalStorage(updatedTasks);
+    toast.success('Task update  Successfully!')
   };
 
   const deleteTask = (id) => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
     setTasks(updatedTasks);
     saveTasksToLocalStorage(updatedTasks);
+    toast.success('Task deleted Successfully!')
   };
 
   const toggleDone = (id) => {
@@ -73,6 +77,8 @@ export default function Todos() {
   const [modal, setModal] = useState(false);
 
   return (
+    <>
+    <div> <Toaster/></div>
     <div className=" sm:px-20 ">
       <div className="bg-gradient-to-r from-zinc-500 via-zinc-600 to-zinc-700 hover:bg-gradient-to-br font-bold     sm:p-4 shadow-xl shadow-gray-400   sm:shadow-lg text-white sm:text-2xl text-center   sm:rounded-lg sm:mt-2    sm:shadow-red-50 h-24 items-center justify-center flex text-3xl sm:h-16 rounded-b-2xl "> My TODOList</div>
 
@@ -141,5 +147,6 @@ export default function Todos() {
       )}
 
     </div>
+    </>
   )
 }

@@ -3,8 +3,11 @@
 import Link from 'next/link'
 import React from 'react'
 
+
 const page = () => {
   return (
+    <>
+    
     <div className='sm:mt-24 mt-16 flex flex-col items-center justify-center text-center'>
       <div >
         <h1 className='text-5xl font-extrabold'>
@@ -36,6 +39,7 @@ const page = () => {
        />
       </div>
     </div>
+    </>
   )
 }
 
